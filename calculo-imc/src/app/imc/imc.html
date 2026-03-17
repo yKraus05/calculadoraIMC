@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card">
+    <h1>Calculadora IMC</h1>
+
+    <div class="form">
+      <div class="input-group">
+        <label>Peso (Kg)</label>
+        <input type="number" [(ngModel)]="peso" placeholder="Ex: 70">
+      </div>
+
+      <div class="input-group">
+        <label>Altura (m)</label>
+        <input type="number" [(ngModel)]="altura" placeholder="Ex: 1.75">
+      </div>
+
+      <button (click)="calcularIMC()">Calcular</button>
+    </div>
+
+    <div class="resultado" *ngIf="imc > 0">
+      <p class="valor">IMC: {{ imc | number:'1.2-2' }}</p>
+      <p class="situacao">
+        Situação: <strong>{{ resultado }}</strong>
+      </p>
+    </div>
+  </div>
+</div>
